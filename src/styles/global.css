@@ -1,4 +1,20 @@
-html {
-  font-family: system-ui, -sans-serif;
-  background-color: #f6f6f6;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f6f6f6] font-sans;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-[#c9cdef] bg-gradient-to-tr from-[#c9cdef] to-[#1360d6];
+    @apply bg-clip-text text-transparent;
+  }
+
+  .text-important {
+    @apply text-center text-3xl font-bold text-slate-50;
+  }
 }
