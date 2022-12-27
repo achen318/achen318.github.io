@@ -1,0 +1,21 @@
+---
+import SocialIcon from './SocialIcon.astro';
+import type { Social } from '../types';
+
+const socials: Array<Social> = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/achen318',
+    icon: 'mdi:github'
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/achen318/',
+    icon: 'mdi:linkedin'
+  }
+];
+---
+
+<footer class="center h-32 gap-4 bg-gray-500">
+  {socials.map((social) => <SocialIcon social={social} />)}
+</footer>

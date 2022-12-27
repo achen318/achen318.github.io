@@ -9,9 +9,16 @@
 }
 
 @layer utilities {
-  .text-gradient {
+  .center {
+    @apply flex items-center justify-center;
+  }
+
+  .gradient {
     @apply bg-[#c9cdef] bg-gradient-to-tr from-[#c9cdef] to-[#1360d6];
-    @apply bg-clip-text text-transparent;
+  }
+
+  .text-gradient {
+    @apply gradient bg-clip-text text-transparent;
   }
 
   .text-important {

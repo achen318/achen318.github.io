@@ -1,0 +1,15 @@
+---
+import { Icon } from 'astro-icon';
+import type { Social } from '../types';
+
+export interface Props {
+  social: Social;
+}
+
+const { social } = Astro.props;
+---
+
+<a class="group" href={social.url} target="_blank">
+  <Icon class="h-16 group-hover:opacity-75" name={social.icon} />
+  <p class="text-center group-hover:opacity-75">{social.name}</p>
+</a>
