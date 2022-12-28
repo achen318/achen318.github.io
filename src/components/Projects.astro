@@ -1,7 +1,13 @@
 ---
 import Section from './Section.astro';
+import Project from './Project.astro';
+import type { ProjectType } from '../types';
+
+const projects: ProjectType[] = [];
 ---
 
 <Section title="Projects">
-  <p class="text-important">Check out some of my best works here!</p>
+  <p class="text-important">Check out some of my best works here! (WIP)</p>
+
+  {projects.map((project: ProjectType) => <Project project={project} />)}
 </Section>
