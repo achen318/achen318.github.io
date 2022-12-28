@@ -1,7 +1,85 @@
 ---
 import Section from './Section.astro';
+import SkillCollection from './SkillCollection.astro';
+import type { SkillType } from '../types';
+
+const languages: SkillType[] = [
+  {
+    name: 'Python',
+    icon: 'vscode-icons:file-type-python',
+    year: 2019
+  },
+  {
+    name: 'HTML',
+    icon: 'vscode-icons:file-type-html',
+    year: 2020
+  },
+  {
+    name: 'CSS',
+    icon: 'vscode-icons:file-type-css',
+    year: 2020
+  },
+  {
+    name: 'JavaScript',
+    icon: 'vscode-icons:file-type-js-official',
+    year: 2020
+  },
+  {
+    name: 'Java',
+    icon: 'vscode-icons:file-type-jar',
+    year: 2020
+  },
+  {
+    name: 'C++',
+    icon: 'vscode-icons:file-type-cpp3',
+    year: 2022
+  },
+  {
+    name: 'TypeScript',
+    icon: 'vscode-icons:file-type-typescript-official',
+    year: 2022
+  }
+];
+
+const frameworks: SkillType[] = [
+  {
+    name: 'Node.js',
+    icon: 'vscode-icons:file-type-node',
+    year: 2021
+  },
+  {
+    name: 'React',
+    icon: 'vscode-icons:file-type-reactjs',
+    year: 2021
+  },
+  {
+    name: 'Next.js',
+    icon: 'vscode-icons:file-type-next',
+    year: 2021
+  },
+  {
+    name: 'TailwindCSS',
+    icon: 'vscode-icons:file-type-tailwind',
+    year: 2022
+  },
+  {
+    name: 'Astro',
+    icon: 'vscode-icons:file-type-astro',
+    year: 2022
+  }
+];
+
+const tools: SkillType[] = [
+  {
+    name: 'Git',
+    icon: 'vscode-icons:file-type-git',
+    year: 2020
+  }
+];
 ---
 
 <Section title="Skills">
-  <p class="text-important">What have I spent my time on?</p>
+  <SkillCollection name="Languages" skills={languages} />
+  <SkillCollection name="Frameworks" skills={frameworks} />
+  <SkillCollection name="Tools" skills={tools} />
 </Section>

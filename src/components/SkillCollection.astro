@@ -1,0 +1,21 @@
+---
+import Skill from './Skill.astro';
+import type { SkillType } from '../types';
+
+export interface Props {
+  name: string;
+  skills: SkillType[];
+}
+
+const { name, skills } = Astro.props;
+---
+
+<fieldset
+  class="grid grid-cols-2 place-items-center gap-8 border border-slate-600 bg-slate-800 px-8 py-4 sm:grid-cols-4"
+>
+  <legend
+    class="rounded-full border bg-slate-900 p-2 text-center font-bold text-slate-50"
+    >{name}</legend
+  >
+  {skills.map((skill: SkillType) => <Skill skill={skill} />)}
+</fieldset>

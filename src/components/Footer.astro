@@ -1,8 +1,8 @@
 ---
-import SocialIcon from './SocialIcon.astro';
-import type { Social } from '../types';
+import Social from './Social.astro';
+import type { SocialType } from '../types';
 
-const socials: Array<Social> = [
+const socials: SocialType[] = [
   {
     name: 'GitHub',
     url: 'https://github.com/achen318',
@@ -17,5 +17,5 @@ const socials: Array<Social> = [
 ---
 
 <footer class="center h-32 gap-4 bg-gray-500">
-  {socials.map((social) => <SocialIcon social={social} />)}
+  {socials.map((social: SocialType) => <Social social={social} />)}
 </footer>
