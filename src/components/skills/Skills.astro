@@ -1,7 +1,7 @@
 ---
-import Section from './Section.astro';
+import Section from '../Section.astro';
 import SkillCollection from './SkillCollection.astro';
-import type { SkillType } from '../types';
+import type { SkillType } from '../../types';
 
 const languages: SkillType[] = [
   {
@@ -43,16 +43,6 @@ const languages: SkillType[] = [
     name: 'C',
     icon: 'vscode-icons:file-type-c',
     year: 2023
-  },
-  {
-    name: 'Dart',
-    icon: 'vscode-icons:file-type-dartlang',
-    year: 2023
-  },
-  {
-    name: 'Go',
-    icon: 'vscode-icons:file-type-go',
-    year: 2024
   }
 ];
 
@@ -85,11 +75,6 @@ const frameworks: SkillType[] = [
   {
     name: 'Svelte',
     icon: 'vscode-icons:file-type-svelte',
-    year: 2023
-  },
-  {
-    name: 'Flutter',
-    icon: 'vscode-icons:file-type-flutter',
     year: 2023
   }
 ];

@@ -6,6 +6,6 @@ Inspired by this [Astro Landing Page](https://github.com/mhyfritz/astro-landing-
 
 ## Setup
 
-0. Clone the repository.
-1. Install dependencies with `npm install`.
-2. Run the development server with `npm run dev`.
+1. Clone the repository.
+2. Install dependencies with `npm install`.
+3. Run the development server with `npm run dev`.
