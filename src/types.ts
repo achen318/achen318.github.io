@@ -7,11 +7,11 @@ export interface SocialType {
 export interface SkillType {
   name: string;
   icon: string;
-  year: number; // initial year of learning
+  year: number;
 }
 
 export interface ProjectType {
   name: string;
-  url: string;
-  image: string;
+  description: string;
+  github: string;
 }

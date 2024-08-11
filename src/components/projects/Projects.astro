@@ -3,11 +3,47 @@ import Section from '../Section.astro';
 import Project from './Project.astro';
 import type { ProjectType } from '../../types';
 
-const projects: ProjectType[] = [];
+const projects: ProjectType[] = [
+  {
+    name: 'DSA',
+    description:
+      'Implementations of common data structures and algorithms in C++.',
+    github: 'https://github.com/achen318/dsa'
+  },
+  {
+    name: 'MEAT',
+    description: 'Multimodal Emotion Analysis Technology',
+    github: 'https://github.com/achen318/meat-web'
+  },
+  {
+    name: 'Character Recognition',
+    description:
+      'A website demonstration of how linear algebra techniques (e.g. singular value decomposition) can be used to classify handwritten characters.',
+    github: 'https://github.com/achen318/character-recognition'
+  },
+  {
+    name: 'Anson Fun Time',
+    description:
+      "A physics demonstration using the Law of Biot-Savart / Coulomb's Law.",
+    github:
+      'https://www.glowscript.org/#/user/anson/folder/MyPrograms/program/ProjectFinalFinal'
+  },
+  {
+    name: 'Solar System',
+    description:
+      'A physics demonstration of the solar system using the Law of Universal Gravitation.',
+    github:
+      'https://glowscript.org/#/user/achen45/folder/MyPrograms/program/OrbitsLabAnthonyChenPart3'
+  },
+  {
+    name: 'SongGuessr',
+    description:
+      'A live multiplayer music guessing game, where players gain points every round by correctly guessing the playing song before time is up.',
+    github: 'https://github.com/Stuycs-K/project03-final-10-chena-sens-shena'
+  }
+];
 ---
 
 <Section title="Projects">
-  <p class="text-important">Check out some of my best works here! (WIP)</p>
-
   {projects.map((project: ProjectType) => <Project project={project} />)}
 </Section>
