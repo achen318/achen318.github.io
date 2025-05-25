@@ -1,10 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 @layer base {
   body {
-    @apply bg-[#f6f6f6] font-sans;
+    @apply bg-[#0d0d0d] font-sans text-white;
   }
 }
 
@@ -13,13 +11,13 @@
     @apply flex items-center justify-center;
   }
 
-  .gradient {
+  /* .gradient {
     @apply bg-[#c9cdef] bg-gradient-to-tr from-[#c9cdef] to-[#1360d6];
   }
 
   .text-gradient {
     @apply gradient bg-clip-text text-transparent;
-  }
+  } */
 
   .text-important {
     @apply text-center text-3xl font-bold text-slate-50;
