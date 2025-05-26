@@ -1,9 +1,20 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-background: #0d0d0d;
+  --color-text: #f2f2f2;
+  --color-accent-blue: #a5c9ff;
+  --color-accent-green: #a5ffc9;
+}
+
 @layer base {
   body {
-    @apply bg-[#0d0d0d] font-sans text-white;
+    @apply bg-[var(--color-background)] font-sans text-[var(--color-text)];
   }
+}
+
+@utility gradient {
+  @apply bg-gradient-to-r from-[#c9cdef] to-[#1360d6];
 }
 
 @layer utilities {
@@ -11,15 +22,11 @@
     @apply flex items-center justify-center;
   }
 
-  /* .gradient {
-    @apply bg-[#c9cdef] bg-gradient-to-tr from-[#c9cdef] to-[#1360d6];
-  }
-
   .text-gradient {
     @apply gradient bg-clip-text text-transparent;
-  } */
+  }
 
   .text-important {
-    @apply text-center text-3xl font-bold text-slate-50;
+    @apply text-center text-3xl font-bold;
   }
 }
