@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/image": "^0.12.1",
     "@tailwindcss/vite": "^4.1.7",
-    "astro": "^4.16.18",
+    "astro": "^5.8.0",
     "astro-icon": "^0.8.0",
     "sharp": "^0.32.6",
     "tailwindcss": "^4.1.7"
