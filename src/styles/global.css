@@ -5,6 +5,8 @@
   --color-text: #f2f2f2;
   --color-accent-blue: #a5c9ff;
   --color-accent-green: #a5ffc9;
+  --color-gradient-start: #c9cdef;
+  --color-gradient-end: #1360d6;
 }
 
 @layer base {
@@ -13,20 +15,26 @@
   }
 }
 
-@utility gradient {
-  @apply bg-gradient-to-r from-[#c9cdef] to-[#1360d6];
+@utility centered-container {
+  @apply mx-auto max-w-screen-lg space-y-4 p-4;
 }
 
-@layer utilities {
-  .center {
-    @apply flex items-center justify-center;
-  }
+@utility gradient {
+  @apply bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)];
+}
 
-  .text-gradient {
-    @apply gradient bg-clip-text text-transparent;
-  }
+@utility text-gradient {
+  @apply gradient bg-clip-text text-transparent;
+}
 
-  .text-important {
-    @apply text-center text-3xl font-bold;
-  }
+@utility center-horizontally {
+  @apply flex justify-center;
+}
+
+@utility center-vertically {
+  @apply flex items-center;
+}
+
+@utility center-all {
+  @apply flex items-center justify-center;
 }

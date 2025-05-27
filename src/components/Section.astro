@@ -6,7 +6,7 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<section class="container mx-auto max-w-screen-lg space-y-4 p-4">
+<section class="centered-container">
   <h1 class="text-gradient p-8 text-center text-5xl font-extrabold">{title}</h1>
   <slot />
 </section>
