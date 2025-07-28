@@ -1,0 +1,55 @@
+---
+import { Icon } from 'astro-icon';
+import Social from './Social.astro';
+import type { SocialType } from '../../types';
+
+const socials: SocialType[] = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/achen318',
+    icon: 'mdi:github'
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/achen318/',
+    icon: 'mdi:linkedin'
+  }
+];
+---
+
+<header class="center-vertically centered-container h-screen">
+  <div class="space-y-4 text-center md:text-left">
+    <h1 class="text-gradient text-7xl font-bold tracking-tighter">
+      Anthony Chen
+    </h1>
+
+    <div class="center-horizontally gap-2 md:justify-start">
+      {socials.map((social: SocialType) => <Social social={social} />)}
+    </div>
+
+    <p class="text-2xl">
+      Hello! I am a rising sophomore at MIT studying CS (+ Math).
+    </p>
+
+    <p class="text-2xl">
+      I love exploring all things CS, ranging from web development to systems.
+    </p>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+    <Icon
+      id="scroll-indicator"
+      class="h-16 animate-bounce cursor-pointer"
+      name="mdi:chevron-down"
+    />
+  </div>
+</header>
+
+<script>
+  const main = document.getElementById('main-content');
+  const scrollIndicator = document.getElementById('scroll-indicator');
+
+  scrollIndicator?.addEventListener('click', () => {
+    main?.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
