@@ -1,9 +1,9 @@
 ---
 import Section from '../Section.astro';
 import SkillCollection from './SkillCollection.astro';
-import type { SkillType } from '../../types';
+import type { SkillItem } from '../../types';
 
-const languages: SkillType[] = [
+const languages: SkillItem[] = [
   {
     name: 'Python',
     icon: 'vscode-icons:file-type-python',
@@ -56,7 +56,7 @@ const languages: SkillType[] = [
   }
 ];
 
-const frameworks: SkillType[] = [
+const frameworks: SkillItem[] = [
   {
     name: 'Node.js',
     icon: 'vscode-icons:file-type-node',
@@ -89,7 +89,7 @@ const frameworks: SkillType[] = [
   }
 ];
 
-const tools: SkillType[] = [
+const tools: SkillItem[] = [
   {
     name: 'Git',
     icon: 'vscode-icons:file-type-git',

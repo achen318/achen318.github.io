@@ -1,9 +1,9 @@
 ---
 import Section from '../Section.astro';
 import Project from './Project.astro';
-import type { ProjectType } from '../../types';
+import type { ProjectItem } from '../../types';
 
-const projects: ProjectType[] = [
+const projects: ProjectItem[] = [
   {
     name: 'DSA',
     description:
@@ -45,5 +45,5 @@ const projects: ProjectType[] = [
 ---
 
 <Section title="Projects">
-  {projects.map((project: ProjectType) => <Project project={project} />)}
+  {projects.map((project: ProjectItem) => <Project project={project} />)}
 </Section>

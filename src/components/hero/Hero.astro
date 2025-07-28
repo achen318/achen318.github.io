@@ -1,9 +1,9 @@
 ---
 import { Icon } from 'astro-icon';
 import Social from './Social.astro';
-import type { SocialType } from '../../types';
+import type { SocialItem } from '../../types';
 
-const socials: SocialType[] = [
+const socials: SocialItem[] = [
   {
     name: 'GitHub',
     url: 'https://github.com/achen318',
@@ -24,7 +24,7 @@ const socials: SocialType[] = [
     </h1>
 
     <div class="center-horizontally gap-2 md:justify-start">
-      {socials.map((social: SocialType) => <Social social={social} />)}
+      {socials.map((social: SocialItem) => <Social social={social} />)}
     </div>
 
     <p class="text-2xl">
