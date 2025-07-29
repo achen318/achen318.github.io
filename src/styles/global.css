@@ -38,3 +38,11 @@
 @utility center-all {
   @apply flex items-center justify-center;
 }
+
+@utility navbar-bottom {
+  @apply absolute bottom-0;
+}
+
+@utility navbar-top {
+  @apply fixed top-0 border-b border-slate-700 bg-slate-900;
+}

@@ -1,3 +1,8 @@
+export interface NavItem {
+  name: string;
+  href: string;
+}
+
 export interface ProjectItem {
   name: string;
   description: string;

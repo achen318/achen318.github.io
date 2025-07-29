@@ -1,0 +1,42 @@
+---
+import type { NavItem } from '../../types';
+
+const navItems: NavItem[] = [
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' }
+];
+---
+
+<nav
+  id="navbar"
+  class="navbar-bottom center-vertically w-full justify-between px-8 py-4"
+>
+  <a href="/" class="text-gradient hidden text-2xl font-bold sm:inline"
+    >Anthony Chen</a
+  >
+  <a href="/" class="text-gradient text-2xl font-bold sm:hidden">AC</a>
+
+  <span>
+    {
+      navItems.map((item) => (
+        <a href={item.href} class="mx-2 text-lg">
+          {item.name}
+        </a>
+      ))
+    }
+  </span>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+
+    document.addEventListener('scroll', () => {
+      if (!navbar) return;
+
+      const withinHero =
+        window.scrollY < window.innerHeight - navbar.offsetHeight;
+
+      navbar.classList.toggle('navbar-top', !withinHero);
+      navbar.classList.toggle('navbar-bottom', withinHero);
+    });
+  </script>
+</nav>

@@ -1,12 +1,13 @@
 ---
 export interface Props {
   title: string;
+  id: string;
 }
 
-const { title } = Astro.props;
+const { title, id } = Astro.props;
 ---
 
-<section class="centered-container">
+<section {id} class="centered-container">
   <h1 class="text-gradient p-8 text-center text-5xl font-extrabold">{title}</h1>
   <slot />
 </section>
