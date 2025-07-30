@@ -27,7 +27,7 @@ const { scrollToggle } = Astro.props;
     <span class="hidden sm:inline">
       {
         navItems.map((item) => (
-          <a href={item.href} class="text-hover mx-2 text-lg font-medium">
+          <a href={item.href} class="mx-2 font-medium">
             {item.name}
           </a>
         ))
@@ -55,7 +55,7 @@ const { scrollToggle } = Astro.props;
       navItems.map((item) => (
         <a
           href={item.href}
-          class="mobile-nav-link text-hover mx-2 text-lg font-medium"
+          class="mobile-nav-link mx-2 font-medium"
         >
           {item.name}
         </a>
@@ -73,7 +73,7 @@ const { scrollToggle } = Astro.props;
   const scrollIndicator = document.getElementById('scroll-indicator');
 
   function openMobileMenu() {
-    navbar!.classList.add('border-t', 'border-slate-700');
+    navbar!.classList.add('border-t', 'border-[var(--color-border)]');
     mobileMenu!.classList.add('flex');
     mobileMenu!.classList.remove('hidden');
     hamburger!.classList.add('hidden');
@@ -82,7 +82,7 @@ const { scrollToggle } = Astro.props;
   }
 
   function closeMobileMenu() {
-    navbar!.classList.remove('border-t', 'border-slate-700');
+    navbar!.classList.remove('border-t', 'border-[var(--color-border)]');
     mobileMenu!.classList.remove('flex');
     mobileMenu!.classList.add('hidden');
     hamburger!.classList.remove('hidden');

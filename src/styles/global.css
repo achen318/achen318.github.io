@@ -1,17 +1,50 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-background: #0d0d0d;
+  --color-background: #0f172b;
   --color-text: #f2f2f2;
+  --color-border: #314158;
+
+  --color-hero: #0d0d0d;
+  --color-footer: #646c7b;
+
   --color-accent-blue: #a5c9ff;
-  --color-accent-green: #a5ffc9;
+
   --color-gradient-start: #c9cdef;
   --color-gradient-end: #1360d6;
 }
 
 @layer base {
   body {
-    @apply bg-[var(--color-background)] font-sans text-[var(--color-text)];
+    @apply bg-[var(--color-hero)] font-sans text-[var(--color-text)];
+  }
+
+  header {
+    @apply bg-[var(--color-hero)];
+  }
+
+  main {
+    @apply bg-[var(--color-background)] p-6;
+  }
+
+  main:not(.home-main) {
+    @apply mt-8;
+  }
+
+  h3 {
+    @apply text-xl font-bold;
+  }
+
+  p {
+    @apply text-lg;
+  }
+
+  a {
+    @apply text-hover text-lg;
+  }
+
+  footer {
+    @apply bg-[var(--color-footer)];
   }
 }
 
@@ -48,5 +81,5 @@
 }
 
 @utility navbar-top {
-  @apply fixed top-0 border-b border-slate-700 bg-slate-900;
+  @apply fixed top-0 border-b border-[var(--color-border)] bg-[var(--color-background)];
 }
