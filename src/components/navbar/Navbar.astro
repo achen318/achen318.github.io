@@ -29,8 +29,14 @@ const navItems: NavItem[] = [
       id="hamburger"
       name="mdi:menu"
       class="size-8 sm:hidden cursor-pointer"
+      aria-label="Open mobile menu"
     />
-    <Icon id="close" name="mdi:close" class="size-8 hidden cursor-pointer" />
+    <Icon
+      id="close"
+      name="mdi:close"
+      class="size-8 hidden cursor-pointer"
+      aria-label="Close mobile menu"
+    />
   </div>
 
   <!-- Mobile Navigation -->
@@ -39,7 +45,7 @@ const navItems: NavItem[] = [
       navItems.map((item) => (
         <a
           href={item.href}
-          class="mobile-nav-link text-hover mx-2  text-lg font-medium"
+          class="mobile-nav-link text-hover mx-2 text-lg font-medium"
         >
           {item.name}
         </a>
@@ -54,19 +60,24 @@ const navItems: NavItem[] = [
   const close = document.getElementById('close');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  const scrollIndicator = document.getElementById('scroll-indicator');
 
   function openMobileMenu() {
+    navbar!.classList.add('border-t', 'border-slate-700');
     mobileMenu!.classList.add('flex');
     mobileMenu!.classList.remove('hidden');
     hamburger!.classList.add('hidden');
     close!.classList.remove('hidden');
+    scrollIndicator!.classList.add('hidden');
   }
 
   function closeMobileMenu() {
+    navbar!.classList.remove('border-t', 'border-slate-700');
     mobileMenu!.classList.remove('flex');
     mobileMenu!.classList.add('hidden');
     hamburger!.classList.remove('hidden');
     close!.classList.add('hidden');
+    scrollIndicator!.classList.remove('hidden');
   }
 
   // Toggle navbar between top and bottom
@@ -81,7 +92,7 @@ const navItems: NavItem[] = [
   });
 
   // Toggle mobile menu visibility
-  if (navbar && hamburger && close && mobileMenu) {
+  if (navbar && hamburger && close && mobileMenu && scrollIndicator) {
     hamburger.addEventListener('click', openMobileMenu);
     close.addEventListener('click', closeMobileMenu);
 
