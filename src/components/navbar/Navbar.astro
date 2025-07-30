@@ -1,5 +1,6 @@
 ---
 import type { NavItem } from '../../types';
+import { Icon } from 'astro-icon';
 
 const navItems: NavItem[] = [
   { name: 'Skills', href: '#skills' },
@@ -7,36 +8,96 @@ const navItems: NavItem[] = [
 ];
 ---
 
-<nav
-  id="navbar"
-  class="navbar-bottom center-vertically w-full justify-between px-8 py-4"
->
-  <a href="/" class="text-gradient hidden text-2xl font-bold sm:inline"
-    >Anthony Chen</a
-  >
-  <a href="/" class="text-gradient text-2xl font-bold sm:hidden">AC</a>
+<nav id="navbar" class="navbar-bottom w-full px-8 py-4">
+  <div class="center-vertically w-full justify-between">
+    <!-- Name -->
+    <a href="/" class="text-gradient text-2xl font-bold">Anthony Chen</a>
 
-  <span>
+    <!-- Desktop Navigation -->
+    <span class="hidden sm:inline">
+      {
+        navItems.map((item) => (
+          <a href={item.href} class="text-hover mx-2 text-lg font-medium">
+            {item.name}
+          </a>
+        ))
+      }
+    </span>
+
+    <!-- Mobile Menu Button -->
+    <Icon
+      id="hamburger"
+      name="mdi:menu"
+      class="size-8 sm:hidden cursor-pointer"
+    />
+    <Icon id="close" name="mdi:close" class="size-8 hidden cursor-pointer" />
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="mt-4 hidden flex-col space-y-4 text-center">
     {
       navItems.map((item) => (
-        <a href={item.href} class="mx-2 text-lg">
+        <a
+          href={item.href}
+          class="mobile-nav-link text-hover mx-2  text-lg font-medium"
+        >
           {item.name}
         </a>
       ))
     }
-  </span>
-
-  <script>
-    const navbar = document.getElementById('navbar');
-
-    document.addEventListener('scroll', () => {
-      if (!navbar) return;
-
-      const withinHero =
-        window.scrollY < window.innerHeight - navbar.offsetHeight;
-
-      navbar.classList.toggle('navbar-top', !withinHero);
-      navbar.classList.toggle('navbar-bottom', withinHero);
-    });
-  </script>
+  </div>
 </nav>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const close = document.getElementById('close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function openMobileMenu() {
+    mobileMenu!.classList.add('flex');
+    mobileMenu!.classList.remove('hidden');
+    hamburger!.classList.add('hidden');
+    close!.classList.remove('hidden');
+  }
+
+  function closeMobileMenu() {
+    mobileMenu!.classList.remove('flex');
+    mobileMenu!.classList.add('hidden');
+    hamburger!.classList.remove('hidden');
+    close!.classList.add('hidden');
+  }
+
+  // Toggle navbar between top and bottom
+  document.addEventListener('scroll', () => {
+    if (!navbar) return;
+
+    const withinHero =
+      window.scrollY < window.innerHeight - navbar.offsetHeight;
+
+    navbar.classList.toggle('navbar-top', !withinHero);
+    navbar.classList.toggle('navbar-bottom', withinHero);
+  });
+
+  // Toggle mobile menu visibility
+  if (navbar && hamburger && close && mobileMenu) {
+    hamburger.addEventListener('click', openMobileMenu);
+    close.addEventListener('click', closeMobileMenu);
+
+    // Close when a link is clicked
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close when the window is clicked outside the menu
+    document.addEventListener('click', (event) => {
+      if (
+        !navbar.contains(event.target as Node) &&
+        !mobileMenu.contains(event.target as Node)
+      ) {
+        closeMobileMenu();
+      }
+    });
+  }
+</script>
