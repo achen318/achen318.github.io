@@ -31,8 +31,12 @@
     @apply mt-8;
   }
 
+  footer {
+    @apply border-t  border-[var(--color-border)] bg-[var(--color-footer)] p-6;
+  }
+
   h1 {
-    @apply text-gradient text-5xl font-extrabold;
+    @apply text-gradient text-4xl font-extrabold;
   }
 
   h2 {
@@ -45,10 +49,6 @@
 
   a {
     @apply text-hover text-lg;
-  }
-
-  footer {
-    @apply bg-[var(--color-footer)];
   }
 }
 
