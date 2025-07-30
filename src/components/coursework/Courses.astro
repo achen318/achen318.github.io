@@ -10,7 +10,7 @@ export interface Props {
 const { semester, courses } = Astro.props;
 ---
 
-<h3 class="mt-8">{semester}</h3>
+<h2 class="mt-8">{semester}</h2>
 <ul class="list-disc space-y-1 pl-8">
   {courses.map((course) => <Course course={course} />)}
 </ul>

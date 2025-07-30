@@ -1,12 +1,12 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-background: #0f172b;
+  --color-background: #121212;
   --color-text: #f2f2f2;
-  --color-border: #314158;
+  --color-border: rgba(165, 201, 255, 0.25);
 
   --color-hero: #0d0d0d;
-  --color-footer: #646c7b;
+  --color-footer: #1a1a1f;
 
   --color-accent-blue: #a5c9ff;
 
@@ -16,7 +16,7 @@
 
 @layer base {
   body {
-    @apply bg-[var(--color-hero)] font-sans text-[var(--color-text)];
+    @apply bg-[var(--color-hero)] font-sans text-[var(--color-text)] print:text-black;
   }
 
   header {
@@ -31,7 +31,11 @@
     @apply mt-8;
   }
 
-  h3 {
+  h1 {
+    @apply text-gradient text-5xl font-extrabold;
+  }
+
+  h2 {
     @apply text-xl font-bold;
   }
 
@@ -57,7 +61,7 @@
 }
 
 @utility text-gradient {
-  @apply gradient bg-clip-text text-transparent;
+  @apply gradient bg-clip-text text-transparent print:text-black;
 }
 
 @utility text-hover {
