@@ -1,0 +1,15 @@
+---
+import type { CourseItem } from '../../types';
+
+export interface Props {
+  course: CourseItem;
+}
+
+const { course } = Astro.props;
+---
+
+<li>
+  <a href={course.url} target="_blank" class="text-hover text-lg">
+    {course.code}: {course.name}
+  </a>
+</li>

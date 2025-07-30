@@ -1,3 +1,9 @@
+export interface CourseItem {
+  code: string;
+  name: string;
+  url: string;
+}
+
 export interface NavItem {
   name: string;
   href: string;

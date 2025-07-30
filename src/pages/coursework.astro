@@ -1,0 +1,101 @@
+---
+import Footer from '../components/footer/Footer.astro';
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/navbar/Navbar.astro';
+import Section from '../components/Section.astro';
+import type { CourseItem } from '../types';
+import Courses from '../components/coursework/Courses.astro';
+
+const fall25: CourseItem[] = [
+  {
+    code: '6.1910',
+    name: 'Computation Structures',
+    url: 'https://student.mit.edu/catalog/m6a.html#6.1910'
+  },
+  {
+    code: '6.3900',
+    name: 'Introduction to Machine Learning',
+    url: 'https://student.mit.edu/catalog/m6c.html#6.3900'
+  },
+  {
+    code: '18.600',
+    name: 'Probability and Random Variables',
+    url: 'https://student.mit.edu/catalog/m18b.html#18.600'
+  },
+  {
+    code: '18.700',
+    name: 'Linear Algebra',
+    url: 'https://student.mit.edu/catalog/m18b.html#18.700'
+  },
+  {
+    code: '21M.051',
+    name: 'Fundamentals of Music',
+    url: 'https://student.mit.edu/catalog/m21Ma.html#21M.051'
+  }
+];
+
+const spring25: CourseItem[] = [
+  {
+    code: '6.1010',
+    name: 'Fundamentals of Programming',
+    url: 'https://student.mit.edu/catalog/archive/spring/m6a.html#6.1010'
+  },
+  {
+    code: '6.1210',
+    name: 'Introduction to Algorithms',
+    url: 'https://student.mit.edu/catalog/archive/spring/m6a.html#6.1210'
+  },
+  {
+    code: '6.1904',
+    name: 'Introduction to Low-level Programming in C and Assembly',
+    url: 'https://student.mit.edu/catalog/archive/spring/m6a.html#6.1904'
+  },
+  {
+    code: '17.41',
+    name: 'Introduction to International Relations',
+    url: 'https://student.mit.edu/catalog/archive/spring/m17b.html#17.41'
+  },
+  {
+    code: '18.100B',
+    name: 'Real Analysis',
+    url: 'https://student.mit.edu/catalog/archive/spring/m18a.html#18.100B'
+  }
+];
+
+const fall24: CourseItem[] = [
+  {
+    code: '5.112',
+    name: 'Principles of Chemical Science',
+    url: 'https://student.mit.edu/catalog/archive/fall/m5a.html#5.112'
+  },
+  {
+    code: '6.1200',
+    name: 'Mathematics for Computer Science',
+    url: 'https://student.mit.edu/catalog/archive/fall/m6a.html#6.1200'
+  },
+  {
+    code: '8.02',
+    name: 'Physics II',
+    url: 'https://student.mit.edu/catalog/archive/fall/m8a.html#8.02'
+  },
+  {
+    code: '21W.035',
+    name: 'Science Writing and New Media: Elements of Science Writing for the Public',
+    url: 'https://student.mit.edu/catalog/archive/fall/m21Wa.html#21W.035'
+  }
+];
+---
+
+<Layout title="Coursework">
+  <Navbar />
+
+  <main class="bg-slate-900 p-6">
+    <Section title="Coursework">
+      <Courses semester="Fall 2025" courses={fall25} />
+      <Courses semester="Spring 2025" courses={spring25} />
+      <Courses semester="Fall 2024" courses={fall24} />
+    </Section>
+  </main>
+
+  <Footer />
+</Layout>

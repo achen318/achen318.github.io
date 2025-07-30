@@ -3,12 +3,22 @@ import type { NavItem } from '../../types';
 import { Icon } from 'astro-icon';
 
 const navItems: NavItem[] = [
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' }
+  { name: 'Home', href: '/' },
+  { name: 'Coursework', href: '/coursework' }
 ];
+
+export interface Props {
+  scrollToggle?: boolean;
+}
+
+const { scrollToggle } = Astro.props;
 ---
 
-<nav id="navbar" class="navbar-bottom w-full px-8 py-4">
+<nav
+  id="navbar"
+  class={`${scrollToggle ? 'navbar-bottom' : 'navbar-top'} w-full px-8 py-4`}
+  data-scroll-toggle={scrollToggle ? 'true' : 'false'}
+>
   <div class="center-vertically w-full justify-between">
     <!-- Name -->
     <a href="/" class="text-gradient text-2xl font-bold">Anthony Chen</a>
@@ -68,7 +78,7 @@ const navItems: NavItem[] = [
     mobileMenu!.classList.remove('hidden');
     hamburger!.classList.add('hidden');
     close!.classList.remove('hidden');
-    scrollIndicator!.classList.add('hidden');
+    scrollIndicator?.classList.add('hidden');
   }
 
   function closeMobileMenu() {
@@ -77,22 +87,24 @@ const navItems: NavItem[] = [
     mobileMenu!.classList.add('hidden');
     hamburger!.classList.remove('hidden');
     close!.classList.add('hidden');
-    scrollIndicator!.classList.remove('hidden');
+    scrollIndicator?.classList.remove('hidden');
   }
 
-  // Toggle navbar between top and bottom
-  document.addEventListener('scroll', () => {
-    if (!navbar) return;
+  // Toggle navbar between top and bottom (if enabled)
+  if (navbar?.dataset.scrollToggle === 'true') {
+    document.addEventListener('scroll', () => {
+      if (!navbar) return;
 
-    const withinHero =
-      window.scrollY < window.innerHeight - navbar.offsetHeight;
+      const withinHero =
+        window.scrollY < window.innerHeight - navbar.offsetHeight;
 
-    navbar.classList.toggle('navbar-top', !withinHero);
-    navbar.classList.toggle('navbar-bottom', withinHero);
-  });
+      navbar.classList.toggle('navbar-top', !withinHero);
+      navbar.classList.toggle('navbar-bottom', withinHero);
+    });
+  }
 
   // Toggle mobile menu visibility
-  if (navbar && hamburger && close && mobileMenu && scrollIndicator) {
+  if (navbar && hamburger && close && mobileMenu) {
     hamburger.addEventListener('click', openMobileMenu);
     close.addEventListener('click', closeMobileMenu);
 
