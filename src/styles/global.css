@@ -81,7 +81,7 @@
 }
 
 @utility navbar-bottom {
-  @apply absolute bottom-0;
+  @apply absolute bottom-0 bg-[var(--color-hero)];
 }
 
 @utility navbar-top {
