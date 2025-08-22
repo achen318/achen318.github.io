@@ -1,20 +1,14 @@
 ---
-import Footer from '../components/footer/Footer.astro';
 import Hero from '../components/hero/Hero.astro';
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/navbar/Navbar.astro';
 import Projects from '../components/projects/Projects.astro';
 import Skills from '../components/skills/Skills.astro';
 ---
 
-<Layout title="Anthony Chen" path="">
-  <Navbar scrollToggle={true} />
+<Layout title="Anthony Chen" path="" scrollToggle={true}>
   <Hero />
-
   <main id="main-content" class="home-main">
     <Skills />
     <Projects />
   </main>
-
-  <Footer />
 </Layout>

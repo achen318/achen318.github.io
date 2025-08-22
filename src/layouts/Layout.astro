@@ -1,12 +1,15 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/footer/Footer.astro';
+import Navbar from '../components/navbar/Navbar.astro';
 
 export interface Props {
   title: string;
   path: string;
+  scrollToggle?: boolean;
 }
 
-const { title, path } = Astro.props;
+const { title, path, scrollToggle } = Astro.props;
 const description =
   'Personal website of Anthony Chen, an MIT student majoring in CS + Math. Interested in software engineering.';
 const site = 'https://achen318.github.io/' + path;
@@ -45,6 +48,8 @@ const image = '';
     ></script>
   </head>
   <body>
+    <Navbar scrollToggle={scrollToggle} />
     <slot />
+    <Footer />
   </body>
 </html>

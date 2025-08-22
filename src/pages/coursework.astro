@@ -1,7 +1,5 @@
 ---
-import Footer from '../components/footer/Footer.astro';
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/navbar/Navbar.astro';
 import Section from '../components/Section.astro';
 import type { CourseItem } from '../types';
 import Courses from '../components/coursework/Courses.astro';
@@ -87,8 +85,6 @@ const fall24: CourseItem[] = [
 ---
 
 <Layout title="Coursework" path="coursework">
-  <Navbar />
-
   <main>
     <Section title="Coursework">
       <p>
@@ -101,6 +97,4 @@ const fall24: CourseItem[] = [
       <Courses semester="Fall 2024" courses={fall24} />
     </Section>
   </main>
-
-  <Footer />
 </Layout>
