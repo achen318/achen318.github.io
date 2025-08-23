@@ -19,7 +19,7 @@
 
 @layer base {
   body {
-    @apply bg-[var(--color-hero)] font-sans text-[var(--color-text)] print:text-black;
+    @apply flex min-h-screen flex-col bg-[var(--color-hero)] font-sans text-[var(--color-text)] print:text-black;
   }
 
   header {
@@ -27,7 +27,7 @@
   }
 
   main {
-    @apply bg-[var(--color-background)] p-6;
+    @apply flex-1 bg-[var(--color-background)] p-6;
   }
 
   main:not(.home-main) {
