@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import type { ExperienceItem } from '../types';
+import Experiences from '../components/experience/Experiences.astro';
+
+const research: ExperienceItem[] = [
+  {
+    role: 'UROP Student',
+    organization: 'Mantis AI @ Manolis Kellis Lab',
+    startDate: 'Aug 2025',
+    url: 'https://home.withmantis.com/'
+  }
+];
+
+const teaching: ExperienceItem[] = [
+  {
+    role: 'Lab Assistant - 6.101 (Fundamentals of Programming)',
+    organization:
+      'MIT Department of Electrical Engineering and Computer Science',
+    startDate: 'Sep 2025',
+    url: 'https://student.mit.edu/catalog/m6a.html#6.1010'
+  },
+  {
+    role: 'HKN Tutor',
+    organization: 'MIT Eta Kappa Nu',
+    startDate: 'Feb 2025',
+    endDate: 'May 2025',
+    url: 'https://hkn.mit.edu/'
+  }
+];
+---
+
+<Layout title="Experience" path="experience">
+  <main>
+    <Section title="Experience">
+      <p>Here are the research and teaching roles I have held at MIT.</p>
+
+      <Experiences type="Research" experiences={research} />
+      <Experiences type="Teaching" experiences={teaching} />
+    </Section>
+  </main>
+</Layout>

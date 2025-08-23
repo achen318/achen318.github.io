@@ -1,0 +1,35 @@
+---
+import type { ExperienceItem } from '../../types';
+
+export interface Props {
+  experience: ExperienceItem;
+}
+
+const { experience } = Astro.props;
+
+const dateRange = `${experience.startDate} - ${
+  experience.endDate || 'present'
+}`;
+---
+
+<li class="mb-4">
+  <!-- Spread out horizontally if desktop, vertical list if mobile -->
+  <div class="justify-between sm:flex">
+    <div>
+      <!-- Role -->
+      <a href={experience.url} target="_blank" class="font-semibold">
+        {experience.role}
+      </a>
+
+      <!-- Organization -->
+      <div class="text-[var(--color-text-secondary)]">
+        {experience.organization}
+      </div>
+    </div>
+
+    <!-- Date Range -->
+    <span class="text-sm text-[var(--color-text-muted)] sm:ml-4">
+      {dateRange}
+    </span>
+  </div>
+</li>

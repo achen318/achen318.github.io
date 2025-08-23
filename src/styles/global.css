@@ -12,6 +12,9 @@
 
   --color-gradient-start: #c9cdef;
   --color-gradient-end: #1360d6;
+
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #7d8289;
 }
 
 @layer base {
@@ -49,6 +52,10 @@
 
   a {
     @apply text-hover text-lg;
+  }
+
+  ul {
+    @apply mt-2 list-disc space-y-1 pl-8;
   }
 }
 

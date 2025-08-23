@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon';
 
 const navItems: NavItem[] = [
   { name: 'Home', href: '/' },
+  { name: 'Experience', href: '/experience' },
   { name: 'Coursework', href: '/coursework' }
 ];
 
@@ -53,10 +54,7 @@ const { scrollToggle } = Astro.props;
   <div id="mobile-menu" class="mt-4 hidden flex-col space-y-4 text-center">
     {
       navItems.map((item) => (
-        <a
-          href={item.href}
-          class="mobile-nav-link mx-2 font-medium"
-        >
+        <a href={item.href} class="mobile-nav-link mx-2 font-medium">
           {item.name}
         </a>
       ))

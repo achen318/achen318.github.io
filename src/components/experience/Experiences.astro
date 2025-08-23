@@ -1,0 +1,18 @@
+---
+import type { ExperienceItem } from '../../types';
+import Subsection from '../Subsection.astro';
+import Experience from './Experience.astro';
+
+export interface Props {
+  type: string;
+  experiences: ExperienceItem[];
+}
+
+const { type, experiences } = Astro.props;
+---
+
+<Subsection subtitle={type}>
+  <ul>
+    {experiences.map((experience) => <Experience experience={experience} />)}
+  </ul>
+</Subsection>

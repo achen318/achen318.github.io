@@ -4,6 +4,14 @@ export interface CourseItem {
   url: string;
 }
 
+export interface ExperienceItem {
+  role: string;
+  organization: string;
+  startDate: string;
+  endDate?: string;
+  url: string;
+}
+
 export interface NavItem {
   name: string;
   href: string;
