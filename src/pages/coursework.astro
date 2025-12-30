@@ -4,6 +4,24 @@ import Section from '../components/Section.astro';
 import type { CourseItem } from '../types';
 import Courses from '../components/coursework/Courses.astro';
 
+const spring26: CourseItem[] = [
+  {
+    code: '6.1020',
+    name: 'Software Construction',
+    url: 'https://student.mit.edu/catalog/m6a.html#6.1020'
+  },
+  {
+    code: '6.2060',
+    name: 'Microcomputer Project Laboratory',
+    url: 'https://student.mit.edu/catalog/m6b.html#6.2060'
+  },
+  {
+    code: '24.118',
+    name: 'Paradox and Infinity',
+    url: 'https://student.mit.edu/catalog/m24a.html#24.118'
+  }
+];
+
 const fall25: CourseItem[] = [
   {
     code: '6.1910',
@@ -92,6 +110,7 @@ const fall24: CourseItem[] = [
         MIT.
       </p>
 
+      <Courses semester="Spring 2026" courses={spring26} />
       <Courses semester="Fall 2025" courses={fall25} />
       <Courses semester="Spring 2025" courses={spring25} />
       <Courses semester="Fall 2024" courses={fall24} />

@@ -4,12 +4,21 @@ import Section from '../components/Section.astro';
 import type { ExperienceItem } from '../types';
 import Experiences from '../components/experience/Experiences.astro';
 
+const industry: ExperienceItem[] = [
+  {
+    role: 'Full Stack Engineering Intern',
+    organization: 'CANCollaborate',
+    startDate: 'Jan 2026',
+    url: 'https://cancollaborate.org/'
+  }
+];
+
 const research: ExperienceItem[] = [
   {
     role: 'Undergraduate Researcher',
-    organization: 'MIT Media Lab',
+    organization: 'MIT Media Lab - Social Algorithms Group',
     startDate: 'Sep 2025',
-    url: 'https://www.media.mit.edu/'
+    url: 'https://www.media.mit.edu/groups/social-algorithms/overview/'
   }
 ];
 
@@ -19,6 +28,7 @@ const teaching: ExperienceItem[] = [
     organization:
       'MIT Department of Electrical Engineering and Computer Science',
     startDate: 'Sep 2025',
+    endDate: 'Dec 2025',
     url: 'https://student.mit.edu/catalog/m6a.html#6.1010'
   },
   {
@@ -34,8 +44,12 @@ const teaching: ExperienceItem[] = [
 <Layout title="Experience" path="experience">
   <main>
     <Section title="Experience">
-      <p>Here are the research and teaching roles I have held at MIT.</p>
+      <p>
+        Here are my industry experiences, and the research and teaching roles I
+        have held at MIT.
+      </p>
 
+      <Experiences type="Industry" experiences={industry} />
       <Experiences type="Research" experiences={research} />
       <Experiences type="Teaching" experiences={teaching} />
     </Section>
