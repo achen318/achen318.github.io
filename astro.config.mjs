@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://achen318.github.io/',
+  site: 'https://achen318.com',
   integrations: [
     image({
       serviceEntryPoint: '@astrojs/image/sharp'
