@@ -7,8 +7,10 @@ export interface Props {
 
 const { experience } = Astro.props;
 
-const dateRange = `${experience.startDate} - ${
-  experience.endDate || 'present'
+const dateRange = `${experience.startDate} ${
+  experience.startDate === experience.endDate
+    ? ''
+    : `- ${experience.endDate || 'present'}`
 }`;
 ---
 
