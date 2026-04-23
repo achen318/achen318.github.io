@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-icon';
 import type { SocialItem } from '../../types';
 
 export interface Props {
@@ -7,8 +6,14 @@ export interface Props {
 }
 
 const { social } = Astro.props;
+const Icon = social.icon;
 ---
 
-<a href={social.url} target="_blank" aria-label={social.name}>
-  <Icon class="h-8" name={social.icon} />
+<a
+  href={social.url}
+  target="_blank"
+  aria-label={social.name}
+  class="inline-flex items-center justify-center"
+>
+  <Icon size={32} aria-hidden="true" />
 </a>

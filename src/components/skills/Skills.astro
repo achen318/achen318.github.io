@@ -1,57 +1,86 @@
 ---
 import Section from '../Section.astro';
 import SkillCollection from './SkillCollection.astro';
+import {
+  SiAstro,
+  SiC,
+  SiCplusplus,
+  SiCss,
+  SiGit,
+  SiHtml5,
+  SiJavascript,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiOpenjdk,
+  SiPython,
+  SiReact,
+  SiRust,
+  SiAssemblyscript,
+  SiSvelte,
+  SiTailwindcss,
+  SiTypescript
+} from 'react-icons/si';
 import type { SkillItem } from '../../types';
 
 const languages: SkillItem[] = [
   {
     name: 'Python',
-    icon: 'vscode-icons:file-type-python',
+    icon: SiPython,
+    color: '#3776AB',
     year: 2019
   },
   {
     name: 'HTML',
-    icon: 'vscode-icons:file-type-html',
+    icon: SiHtml5,
+    color: '#E34F26',
     year: 2020
   },
   {
     name: 'CSS',
-    icon: 'vscode-icons:file-type-css',
+    icon: SiCss,
+    color: '#1572B6',
     year: 2020
   },
   {
     name: 'JavaScript',
-    icon: 'vscode-icons:file-type-js-official',
+    icon: SiJavascript,
+    color: '#F7DF1E',
     year: 2020
   },
   {
     name: 'Java',
-    icon: 'vscode-icons:file-type-jar',
+    icon: SiOpenjdk,
+    color: '#ED8B00',
     year: 2020
   },
   {
     name: 'C++',
-    icon: 'vscode-icons:file-type-cpp3',
+    icon: SiCplusplus,
+    color: '#00599C',
     year: 2022
   },
   {
     name: 'TypeScript',
-    icon: 'vscode-icons:file-type-typescript-official',
+    icon: SiTypescript,
+    color: '#3178C6',
     year: 2022
   },
   {
     name: 'C',
-    icon: 'vscode-icons:file-type-c',
+    icon: SiC,
+    color: '#A8B9CC',
     year: 2023
   },
   {
     name: 'Rust',
-    icon: 'vscode-icons:file-type-rust',
+    icon: SiRust,
+    color: '#DEA584',
     year: 2025
   },
   {
     name: 'Assembly',
-    icon: 'vscode-icons:file-type-assembly',
+    icon: SiAssemblyscript,
+    color: '#007ACC',
     year: 2025
   }
 ];
@@ -59,32 +88,38 @@ const languages: SkillItem[] = [
 const frameworks: SkillItem[] = [
   {
     name: 'Node.js',
-    icon: 'vscode-icons:file-type-node',
+    icon: SiNodedotjs,
+    color: '#5FA04E',
     year: 2021
   },
   {
     name: 'React',
-    icon: 'vscode-icons:file-type-reactjs',
+    icon: SiReact,
+    color: '#61DAFB',
     year: 2021
   },
   {
     name: 'Next.js',
-    icon: 'vscode-icons:file-type-next',
+    icon: SiNextdotjs,
+    color: '#000000',
     year: 2021
   },
   {
     name: 'TailwindCSS',
-    icon: 'vscode-icons:file-type-tailwind',
+    icon: SiTailwindcss,
+    color: '#06B6D4',
     year: 2022
   },
   {
     name: 'Astro',
-    icon: 'vscode-icons:file-type-astro',
+    icon: SiAstro,
+    color: '#FF5D01',
     year: 2022
   },
   {
     name: 'Svelte',
-    icon: 'vscode-icons:file-type-svelte',
+    icon: SiSvelte,
+    color: '#FF3E00',
     year: 2023
   }
 ];
@@ -92,7 +127,8 @@ const frameworks: SkillItem[] = [
 const tools: SkillItem[] = [
   {
     name: 'Git',
-    icon: 'vscode-icons:file-type-git',
+    icon: SiGit,
+    color: '#F05032',
     year: 2020
   }
 ];

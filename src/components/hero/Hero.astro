@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon';
+import { FaChevronDown, FaGithub, FaLinkedin } from 'react-icons/fa';
 import Social from './Social.astro';
 import type { SocialItem } from '../../types';
 
@@ -7,12 +7,12 @@ const socials: SocialItem[] = [
   {
     name: 'GitHub',
     url: 'https://github.com/achen318',
-    icon: 'mdi:github'
+    icon: FaGithub
   },
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/achen318/',
-    icon: 'mdi:linkedin'
+    icon: FaLinkedin
   }
 ];
 ---
@@ -42,11 +42,14 @@ const socials: SocialItem[] = [
   </div>
 
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
-    <Icon
+    <button
       id="scroll-indicator"
-      class="text-hover h-16 animate-bounce cursor-pointer"
-      name="mdi:chevron-down"
-    />
+      type="button"
+      aria-label="Scroll to content"
+      class="text-hover animate-bounce cursor-pointer"
+    >
+      <FaChevronDown size={48} aria-hidden="true" />
+    </button>
   </div>
 </header>
 

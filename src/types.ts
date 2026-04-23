@@ -1,3 +1,5 @@
+import type { IconType } from 'react-icons';
+
 export interface CourseItem {
   code: string;
   name: string;
@@ -26,11 +28,12 @@ export interface ProjectItem {
 export interface SocialItem {
   name: string;
   url: string;
-  icon: string;
+  icon: IconType;
 }
 
 export interface SkillItem {
   name: string;
-  icon: string;
+  icon: IconType;
+  color: string;
   year: number;
 }

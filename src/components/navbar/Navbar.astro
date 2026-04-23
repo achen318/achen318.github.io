@@ -1,6 +1,6 @@
 ---
+import { FaBars, FaTimes } from 'react-icons/fa';
 import type { NavItem } from '../../types';
-import { Icon } from 'astro-icon';
 
 const navItems: NavItem[] = [
   { name: 'Home', href: '/' },
@@ -36,18 +36,22 @@ const { scrollToggle } = Astro.props;
     </span>
 
     <!-- Mobile Menu Button -->
-    <Icon
+    <button
       id="hamburger"
-      name="mdi:menu"
-      class="size-8 sm:hidden cursor-pointer"
+      type="button"
+      class="cursor-pointer sm:hidden"
       aria-label="Open mobile menu"
-    />
-    <Icon
+    >
+      <FaBars size={24} aria-hidden="true" />
+    </button>
+    <button
       id="close"
-      name="mdi:close"
-      class="size-8 hidden cursor-pointer"
+      type="button"
+      class="hidden cursor-pointer"
       aria-label="Close mobile menu"
-    />
+    >
+      <FaTimes size={24} aria-hidden="true" />
+    </button>
   </div>
 
   <!-- Mobile Navigation -->

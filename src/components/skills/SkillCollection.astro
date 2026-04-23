@@ -11,7 +11,7 @@ const { name, skills } = Astro.props;
 ---
 
 <fieldset
-  class="grid grid-cols-2 place-items-center gap-8 border px-8 py-4 sm:grid-cols-4"
+  class="grid grid-cols-2 place-items-center gap-8 border px-8 py-4 text-center sm:grid-cols-4"
 >
   <legend class="rounded-full border p-2 text-center font-bold">{name}</legend>
   {skills.map((skill: SkillItem) => <Skill skill={skill} />)}
