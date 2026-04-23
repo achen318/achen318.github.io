@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { FaChevronDown, FaGithub, FaLinkedin } from 'react-icons/fa';
+import headshot from '../../assets/headshot.jpeg';
 import Social from './Social.astro';
 import type { SocialItem } from '../../types';
 
@@ -17,28 +19,49 @@ const socials: SocialItem[] = [
 ];
 ---
 
-<header class="center-vertically centered-container h-screen">
-  <div class="space-y-4 text-center sm:text-left">
-    <h1 class="text-gradient text-7xl font-bold tracking-tighter">
-      Anthony Chen
-    </h1>
-
-    <div class="center-horizontally gap-2 sm:justify-start">
-      {socials.map((social: SocialItem) => <Social social={social} />)}
+<header
+  class="centered-container relative flex min-h-screen items-start py-24 lg:h-screen lg:items-center lg:py-0"
+>
+  <div class="flex w-full flex-col items-center gap-8 lg:flex-row lg:gap-12">
+    <div class="shrink-0">
+      <Image
+        src={headshot}
+        alt="Portrait of Anthony Chen"
+        width={320}
+        height={320}
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        class="h-64 w-64 rounded-2xl object-cover shadow-lg sm:h-72 sm:w-72 lg:h-80 lg:w-80"
+      />
     </div>
 
-    <p class="text-2xl">Hello! I am a sophomore at MIT studying CS + Math.</p>
+    <div class="space-y-4 text-center sm:text-left">
+      <h1 class="text-gradient text-7xl font-bold tracking-tighter">
+        Anthony Chen
+      </h1>
 
-    <p class="text-2xl">
-      I love exploring all things CS, ranging from full stack development to
-      low-level systems programming and embedded systems. I am interested in
-      real-world applications of CS and math.
-    </p>
+      <div class="center-horizontally gap-2 sm:justify-start">
+        {socials.map((social: SocialItem) => <Social social={social} />)}
+      </div>
 
-    <p class="text-2xl">
-      I am currently researching media propagation in social networks. Feel free
-      to check out my work below!
-    </p>
+      <p class="text-xl">
+        Hello! I am a sophomore at MIT double majoring in Computer Science
+        (Course 6-3) and Mathematics (Course 18).
+      </p>
+
+      <p class="text-xl">
+        I love exploring all things CS, ranging from full stack development to
+        low-level systems programming and embedded systems. I am interested in
+        building software with practical, real-world impact across a range of
+        applications.
+      </p>
+
+      <p class="text-xl">
+        Outside of academics and work, I enjoy eating at new places and
+        practicing taekwondo.
+      </p>
+    </div>
   </div>
 
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2">

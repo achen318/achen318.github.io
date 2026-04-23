@@ -88,7 +88,7 @@
 }
 
 @utility navbar-bottom {
-  @apply absolute bottom-0 bg-[var(--color-hero)];
+  @apply fixed top-0 bg-[var(--color-hero)] sm:absolute sm:bottom-0 sm:top-auto;
 }
 
 @utility navbar-top {

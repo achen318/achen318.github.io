@@ -17,7 +17,9 @@ const { scrollToggle } = Astro.props;
 
 <nav
   id="navbar"
-  class={`${scrollToggle ? 'navbar-bottom' : 'navbar-top'} w-full px-8 py-4`}
+  class={`${
+    scrollToggle ? 'navbar-bottom' : 'navbar-top'
+  } z-50 w-full px-8 py-4`}
   data-scroll-toggle={scrollToggle ? 'true' : 'false'}
 >
   <div class="center-vertically w-full justify-between">

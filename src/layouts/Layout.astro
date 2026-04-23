@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Footer from '../components/footer/Footer.astro';
 import Navbar from '../components/navbar/Navbar.astro';
+import headshot from '../assets/headshot.jpeg';
 
 export interface Props {
   title: string;
@@ -12,8 +13,8 @@ export interface Props {
 const { title, path, scrollToggle } = Astro.props;
 const description =
   'Anthony Chen is a sophomore at MIT studying Computer Science and Mathematics. Interested in software engineering.';
-const site = 'https://achen318.com/' + path;
-const image = '';
+const site = new URL(path, 'https://achen318.com/').toString();
+const image = new URL(headshot.src, 'https://achen318.com/').toString();
 ---
 
 <!DOCTYPE html>
